@@ -58,7 +58,7 @@ export const Navbar = ({ theme, toggleTheme, toggleTerminal, currentView, setVie
       <nav className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-bg-secondary/70 backdrop-blur-md border-border-color shadow-sm' : ''}`}>
         <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
           <a href="#" className="font-heading text-2xl font-extrabold tracking-tight flex items-center text-text-primary" onClick={(e) => handleNavClick(e, 'hero')}>
-            Ismail<span className="text-primary">.</span>
+            Karthick<span className="text-primary">.</span>
           </a>
 
           <div className="hidden lg:flex items-center gap-8">

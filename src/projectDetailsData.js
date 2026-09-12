@@ -50,7 +50,7 @@ export const projectDetailsData = {
   },
   "slqc": {
     subtitle: "A premium web application suite automating participant registration, stage venue allocation, dynamic marksheet templates, and interactive tie-resolution.",
-    images: Array.from({ length: 18 }, (_, i) => `./project_pictures/slqc/${i + 1}.png`),
+    images: Array.from({ length: 18 }, (_, i) => `./project_pictures/visual/${i + 1}.png`),
     metrics: [
       { value: "Docker-Compose", label: "Carrier Volume Deployment" },
       { value: "WASM / SQLite", label: "PocketBase DB Engine" },

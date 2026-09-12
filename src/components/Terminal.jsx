@@ -100,7 +100,7 @@ export const Terminal = ({ isOpen, onClose, data }) => {
             <span className="w-3 h-3 rounded-full bg-amber-500" />
             <span className="w-3 h-3 rounded-full bg-emerald-500" />
           </div>
-          <span className="text-xs text-[#8b949e] font-semibold mr-10">ismail@portfolio-shell:~</span>
+          <span className="text-xs text-[#8b949e] font-semibold mr-10">karthick@portfolio-shell:~</span>
           <div style={{ width: '40px' }} />
         </div>
 

@@ -170,7 +170,7 @@ export const Hero = ({ role, name, about, resumeUrl, githubUrl, linkedinUrl, ins
               <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             </div>
-            <div className="flex-1 text-center text-xs text-text-muted mr-9">ismail@portfolio-server:~</div>
+            <div className="flex-1 text-center text-xs text-text-muted mr-9">karthick@portfolio-server:~</div>
           </div>
 
           <div className="flex-1 p-5 overflow-y-auto text-xs text-text-primary flex flex-col gap-2 text-left" ref={terminalBodyRef}>
