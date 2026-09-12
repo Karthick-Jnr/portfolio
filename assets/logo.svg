@@ -1,26 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
     <defs>
         <linearGradient id="gradBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#12131a"/>
-            <stop offset="100%" stop-color="#090a0f"/>
+            <stop offset="0%" stop-color="#111827"/>
+            <stop offset="100%" stop-color="#0a0f1d"/>
         </linearGradient>
-        <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f3d078"/>
-            <stop offset="50%" stop-color="#d4af37"/>
-            <stop offset="100%" stop-color="#a37b4c"/>
+        <linearGradient id="gradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7dd3fc"/>
+            <stop offset="50%" stop-color="#38bdf8"/>
+            <stop offset="100%" stop-color="#0284c7"/>
         </linearGradient>
     </defs>
     
     <!-- Background Card -->
     <rect width="120" height="120" rx="32" fill="url(#gradBg)"/>
     
-    <!-- Gold Border Ring -->
-    <rect x="6" y="6" width="108" height="108" rx="26" fill="none" stroke="url(#gradGold)" stroke-width="2.5" opacity="0.8"/>
+    <!-- Border Ring -->
+    <rect x="6" y="6" width="108" height="108" rx="26" fill="none" stroke="url(#gradCyan)" stroke-width="2.5" opacity="0.85"/>
     
     <!-- Capital "K" Glyph -->
     <path d="M 33.85 89.0 L 33.85 31.0 L 45.56 31.0 L 45.56 56.75 L 69.22 31.0 L 84.97 31.0 L 63.13 53.59 L 86.15 89.0 L 71.01 89.0 L 55.06 61.78 L 45.56 71.48 L 45.56 89.0 Z" 
-          fill="url(#gradGold)" 
-          stroke="url(#gradGold)" 
+          fill="url(#gradCyan)" 
+          stroke="url(#gradCyan)" 
           stroke-width="1.5" 
           stroke-linejoin="round" 
           stroke-linecap="round"/>
