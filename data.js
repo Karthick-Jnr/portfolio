@@ -1,58 +1,51 @@
 export const data = {
-  name: "A.M. Ismail",
-  role: "System Architect & Engineer",
-  resume: "./assets/resume_ismail.pdf",
-  gamePath: [
-    { "Dino": "./games/dino/dino.html" },
-    { "Pacman": "./games/pacman/pacman.html" },
-    { "Tetris": "./games/tetris/tetris.html" }
-  ],
+  name: "Karthick T",
+  role: "Robotics & Automation Engineer",
+  resume: "./assets/resume.pdf",
   images: {
-    profile: "./assets/me.jpeg",
-    hero: "./assets/hero.jpeg"
+    profile: "./assets/me.png",
   },
   contact: {
-    email: "ismailisims1@gmail.com",
-    phone: "+91 81248 14896",
+    email: "karthick.robotics@gmail.com",
+    phone: "+91 98765 43210",
     location: "Chennai, India",
-    github: "https://github.com/Isu-Ismail",
-    linkedin: "https://www.linkedin.com/in/ismail-am",
-    instagram: "https://www.instagram.com/ismail_isims"
+    github: "https://github.com/Karthick-Jnr",
+    linkedin: "https://www.linkedin.com/in/karthick-link",
+    instagram: "https://www.instagram.com/karthick"
   },
-  about: "Engineering student specializing in industrial automation and distributed systems. I bridge mechanical engineering fundamentals with software architecture—designing IoT control systems, deploying multi-node compute infrastructure, and building production-grade automation for real industrial environments. My background gives me a solid grasp of physical machinery, while my focus remains on mapping logical data flows and designing the software systems that run them. Proven track record of delivering reliable systems that run 24/7 in manufacturing and academic settings.",
+  about: "Final-year B.E. Robotics and Automation Engineering student with a deep focus on embedded programming, robot design, and industrial automation systems. I specialize in integrating physical robotic mechanisms with robust embedded firmware—programming microcontrollers, architecting motor control and sensor fusion pipelines, and modeling robot kinematics. Passionate about end-to-end hardware-software integration, building intelligent robotic systems that deliver reliable real-world automation.",
   education: [
     {
-      degree: "B.E. Production Engineering",
+      degree: "B.E. Robotics and Automation",
       institution: "Madras Institute of Technology",
-      period: "Aug 2023 - 2027",
-      description: "CGPA: 7.74/10. Currently in IV Year."
+      period: "2023 - 2027",
+      description: "Final Year. Specializing in Embedded Programming, Robot Design, Kinematics, Control Systems & Industrial Automation."
     },
     {
       degree: "Higher Secondary (HSC)",
-      institution: "L K Higher Secondary School",
-      period: "2022 - 2023",
-      description: "Score: 545/600 (90.8%)"
+      institution: "Higher Secondary School",
+      period: "2021 - 2023",
+      description: "Specialized in Mathematics, Physics & Computer Science."
     }
   ],
   experience: [
     {
-      role: "Industrial Intern (Production & Operations)",
-      company: "SRI Energy Valves Private Limited",
-      period: "June 2026",
-      description: "Underwent focused observational training in industrial valve assembly and shop-floor inventory operations; studied step-by-step mechanical workflows, defect inspection, and systematic part transport logistics.",
-      certificateLink: "./assets/sri_internship.png"
+      role: "Robotics & Automation Intern",
+      company: "Industrial Robotics & Automation Labs",
+      period: "June 2025 - Present",
+      description: "Developed embedded firmware for robotic manipulators, configured motor drives, integrated sensor telemetry, and optimized automated assembly line workflows."
     },
     {
-      role: "Chassis Design & Maintenance",
-      company: "MITONAUR Motorsports (Go-Kart Team)",
+      role: "Robot Design & Embedded Lead",
+      company: "Robotics & Autonomous Systems Team",
       period: "Dec 2024 - 2025",
-      description: "Structured structural simulations and engineering parameters on racing frames designed for the TNKC and KEC championships."
+      description: "Engineered multi-axis robot chassis in CAD, implemented forward/inverse kinematic algorithms on microcontrollers, and tuned closed-loop motor controls."
     }
   ],
   skills: [
-    "MQTT", "Docker", "Docker Swarm", "NGINX", "Pocketbase", "Prometheus", "Grafana", "JupyterHub", "Git", "XAMPP", "GlusterFS", "FireBase", "Python", "FastAPI", "React", "Flutter", "Arduino", "SolidWorks", "Creo", "NX CAD", "CATIA", "Abaqus CAE"
+    "Embedded C", "C++", "Python", "ROS / ROS 2", "Robot Kinematics", "STM32", "Arduino", "ESP32", "SolidWorks", "CAD Design", "Industrial Automation", "PLC Programming", "Sensor Fusion", "Motor Drives", "MATLAB", "Simulink", "OpenCV", "PCB Design", "IoT", "Git"
   ],
-  interests: ["3D Printing", "Home Server Administration", "Karting", "Tech Exploration"],
+  interests: ["Autonomous Robotics", "Embedded Systems", "Robot Mechanism Design", "Industrial Automation", "Drone Tech"],
   certificates: [
     {
       title: "RUSA 2.0 AI in Smart BMS",
@@ -71,117 +64,25 @@ export const data = {
     }
   ],
   projects: [
-
     {
-      title: "Sri Energy Industrial Automation",
-      description: "A local-first IoT crane telemetry and real-time control system. Features containerized React/FastAPI services connected to a self-hosted Pocketbase backend and ESP32 nodes via MQTT.",
-      tags: ["ESP32", "MQTT", "FastAPI", "Pocketbase", "React", "NGINX", "Docker", "XAMPP"],
-      link: "https://srienergy.com/",
-      detailsLink: "./project_details/sriautoamtion.html",
+      title: "Project 1: Autonomous Mobile Robot & Navigation",
+      description: "Template description for Project 1. Autonomous mobile robotics platform with embedded motor controllers, sensor fusion, and closed-loop PID navigation.",
+      tags: ["Embedded C", "STM32", "ROS 2", "Robotics", "Sensors", "CAD"],
+      link: "#",
+      detailsLink: "./project_details/project1",
       status: "Completed",
-      duration: "Oct 2024 – May 2026",
+      duration: "Jan 2026 – May 2026",
       stars: 5
     },
     {
-      title: "CTSKII (ML-Cloud Computing)",
-      description: "A high-availability server cluster offering GPU cloud environments to students. Built with Docker Swarm, GlusterFS, and a slot-based FastAPI booking platform.",
-      tags: ["Docker Swarm", "GlusterFS", "JupyterHub", "FastAPI", "Prometheus", "Grafana", "NFS"],
-      link: "https://ct.mitindia.edu/ctskii/",
-      detailsLink: "./project_details/ctskii.html",
+      title: "Project 2: 4-DOF Robotic Arm Manipulator",
+      description: "Template description for Project 2. Multi-axis articulated robotic arm with inverse kinematics solver, custom gripper, and microcontroller servo driver.",
+      tags: ["Python", "Arduino", "SolidWorks", "Kinematics", "Automation"],
+      link: "#",
+      detailsLink: "./project_details/project2.html",
       status: "Completed",
-      duration: "Oct 2025 – Marhch 2026",
+      duration: "Aug 2025 – Dec 2025",
       stars: 5
-    },
-    {
-      title: "Middleman: Serverless Sourcing & RFQ Engine",
-      description: "An automated RFQ sourcing engine connecting mail streams to React Flow timelines and a serverless PocketBase backend.",
-      tags: ["React", "PocketBase", "React Flow", "Sourcing Engine", "Serverless", "Webhooks"],
-      link: "https://github.com/Isu-Ismail/middleman",
-      detailsLink: "./project_details/middleman.html",
-      status: "Completed",
-      duration: "June 2026 - July 2026",
-      stars: 5
-    },
-    {
-      title: "Quran Competition Management System (SQLC)",
-      description: "A web application suite designed to manage Quran competition registrations, venue allocations, dynamic marksheets, and interactive tie-resolution.",
-      tags: ["React", "TypeScript", "PocketBase", "Docker", "Nginx", "Leaderboards"],
-      link: "https://github.com/Isu-Ismail/quran-competition-system",
-      detailsLink: "./project_details/slqc.html",
-      status: "Completed",
-      duration: "June 2026 - June 2026",
-      stars: 5
-    },
-    {
-      title: "CWM (Command Watch Manager)",
-      description: "A complete workspace and shell history manager for developers. Catalog projects, quick-jump to editors, search history banks, switch GitHub accounts, and copy token-condensed codebase contexts.",
-      tags: ["Python", "CLI", "Click", "Rich", "AI Integration", "Workspace Manager", "Developer Tools"],
-      link: "https://isu-ismail.github.io/cwm-docwebsite/index.html",
-      detailsLink: "./project_details/cwm.html",
-      status: "Completed",
-      duration: "Nov 2025 – Dec 2025",
-      stars: 4
-    },
-
-    {
-      title: "Seven5: Attendance Tracking App",
-      description: "An offline-first Flutter application utilizing Google Drive API sync and predictive leave/attendance simulation algorithms.",
-      tags: ["Flutter", "Hive", "Dart", "Google Drive API", "Cloud Run"],
-      link: "https://github.com/Isu-Ismail/ATTENDER_APP",
-      detailsLink: "./project_details/seven5.html",
-      status: "Completed",
-      duration: "Dec 2025 – May 2026",
-      stars: 4
-    },
-    {
-      title: "NeoCGPA: Intelligent GPA/CGPA Calculator & Target Planner",
-      description: "A client-side GPA/CGPA tracker built with Svelte 5. Features instant calculations, in-browser Tesseract.js OCR marksheet scanning, vector PDF export, and target CGPA goal planning.",
-      tags: ["Svelte 5", "Vite", "Tesseract.js", "OCR", "jsPDF", "Firebase", "Neo-Brutalism"],
-      link: "https://codism.in/neocgpa/",
-      detailsLink: "./project_details/cgpa.html",
-      status: "Completed",
-      duration: "Aug 2026 – Sep 2026",
-      stars: 3
-    },
-    {
-      title: "EggShell: Visual Relational Data Pipeline Builder",
-      description: "A local-first, visual database pipeline workspace to stitch and clean spreadsheet data using an in-browser SQLite Web Worker and React Flow canvas.",
-      tags: ["React", "SQLite", "React Flow", "Web Worker", "OPFS", "Data Pipeline", "Client-Side Privacy"],
-      link: "https://codism.in/eggshell/",
-      detailsLink: "./project_details/eggshell.html",
-      status: "Completed",
-      duration: "May 2026",
-      stars: 3
-    },
-
-    {
-      title: "Virtual Lab for Metrology",
-      description: "A web simulator for physical Profile Projector metrology experiments. Combines 12 decoupled microservices routed via NGINX reverse proxy.",
-      tags: ["React", "Docker", "NGINX", "Simulation"],
-      link: "https://ptmit-org.github.io/virtuallab/",
-      detailsLink: "./project_details/virtuallab.html",
-      status: "Completed",
-      duration: "Sep 2025 – Apr 2026",
-      stars: 3
-    },
-    {
-      title: "BillGenie",
-      description: "A containerized donor registry and ledger system for community organizations. Features single/batch entry modes, local caching, and bulk PDF invoicing.",
-      tags: ["React", "FastAPI", "PocketBase", "Docker", "Pydantic", "Excel Import"],
-      link: "https://github.com/Isu-Ismail/BillGenie/",
-      detailsLink: "./project_details/billgenie.html",
-      status: "Completed",
-      duration: "May 2026",
-      stars: 3
-    },
-    {
-      title: "Anna University App",
-      description: "Mobile application frontend contributions for the official e-Governance workspace at Anna University.",
-      tags: ["Flutter", "Dart", "Hive", "Mobile"],
-      link: "https://play.google.com/store/apps/details?id=com.cegov.AUeGov",
-      status: "Completed",
-      duration: "Aug 2025 – Nov 2025",
-      stars: 3
     }
   ]
 };

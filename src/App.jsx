@@ -89,8 +89,9 @@ export default function App() {
                 />
               </section>
 
-              <section id="projects" className="py-24 border-t border-border-color bg-bg-tertiary">
-                <div className="max-w-6xl mx-auto px-6 md:px-16 w-full">
+              <section id="projects" className="relative py-24 border-t border-border-color bg-bg-tertiary overflow-hidden">
+                <div className="absolute -top-32 -right-32 w-[460px] h-[460px] rounded-full bg-primary/22 dark:bg-primary/18 blur-[85px] pointer-events-none" />
+                <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-16 w-full">
                   <Projects
                     projects={data.projects}
                     onSelectProject={(projectId) => navigate(`/projects/${projectId}`)}
@@ -132,8 +133,9 @@ export default function App() {
                 </div>
               </section>
 
-              <section id="contact" className="py-24 border-t border-border-color bg-bg-secondary">
-                <div className="max-w-6xl mx-auto px-6 md:px-16 w-full">
+              <section id="contact" className="relative py-24 border-t border-border-color bg-bg-secondary overflow-hidden">
+                <div className="absolute -bottom-32 -left-32 w-[460px] h-[460px] rounded-full bg-primary/22 dark:bg-primary/18 blur-[85px] pointer-events-none" />
+                <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-16 w-full">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                     <div className="space-y-6 text-left">
                       <h2 className="text-5xl font-extrabold tracking-tight leading-none text-text-primary">Let's work together.</h2>

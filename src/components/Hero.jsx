@@ -104,16 +104,37 @@ export const Hero = ({ role, name, about, resumeUrl, githubUrl, linkedinUrl, ins
     }
   };
 
+  // Derive a concise summary from shortAbout or the first sentence of about
+  const shortBio = data?.shortAbout || (() => {
+    if (!about) return '';
+    const segments = about.split('. ').filter(Boolean);
+    if (segments.length === 0) return about;
+    if (segments.length >= 2 && segments[0].split(' ').length <= 3) {
+      return `${segments[0]}. ${segments[1]}.`;
+    }
+    return segments[0].endsWith('.') ? segments[0] : `${segments[0]}.`;
+  })();
+
   return (
-    <div className="max-w-6xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-36 min-h-[85vh] w-full">
-      <div className="text-left space-y-6 max-w-xl animate-fade-in">
+    <div className="relative overflow-hidden w-full">
+      {/* Radiant High-Tech Ambient Background Effects */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[560px] bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(var(--primary-rgb),0.28),rgba(var(--primary-rgb),0.08)_55%,transparent_80%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-tech-grid opacity-60 dark:opacity-75 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_45%,#000_40%,transparent_90%)] pointer-events-none" />
+      
+      {/* Floating Luminous Orbs */}
+      <div className="absolute top-1/6 -left-32 w-[480px] h-[480px] rounded-full bg-primary/25 dark:bg-primary/20 blur-[85px] pointer-events-none animate-float-slow" />
+      <div className="absolute bottom-1/6 -right-28 w-[520px] h-[520px] rounded-full bg-primary/22 dark:bg-primary/18 blur-[95px] pointer-events-none animate-float-reverse" />
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-primary/15 dark:bg-primary/12 blur-[80px] pointer-events-none animate-pulse" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-36 min-h-[85vh] w-full">
+        <div className="text-left space-y-6 max-w-xl animate-fade-in">
         <span className="text-primary font-mono uppercase tracking-widest text-xs font-semibold block">{role}</span>
         <h1 className="text-6xl font-extrabold tracking-tight leading-none text-text-primary">
           Hello, I'm <br />
           <span className="text-primary">{nameParts.slice(-2).join(" ")}</span>
         </h1>
         <p className="text-lg text-text-secondary leading-relaxed">
-          Engineer focused on building clean, modular software systems, secure local-first cloud containers, and real-time automation.
+          {shortBio || about}
         </p>
 
         <div className="flex gap-4 flex-wrap items-center">
@@ -199,5 +220,6 @@ export const Hero = ({ role, name, about, resumeUrl, githubUrl, linkedinUrl, ins
         </div>
       </div>
     </div>
+  </div>
   );
 };

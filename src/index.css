@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  /* Font overrides */
-  --font-sans: 'Outfit', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Outfit', sans-serif;
+  /* Font overrides - Crisp Tech & Engineering Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Custom Color Tokens mapped to Tailwind utility tokens */
@@ -24,22 +24,21 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 
-  --animate-glow-pulse: glow-pulse 2s infinite ease-in-out;
+  --animate-glow-pulse: glow-pulse 2.2s infinite ease-in-out;
   --animate-fade-in: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 
   @keyframes glow-pulse {
-
     0%,
     100% {
       opacity: 1;
       transform: scale(1);
-      filter: drop-shadow(0 0 2px var(--primary));
+      filter: drop-shadow(0 0 3px rgba(var(--primary-rgb), 0.45));
     }
 
     50% {
-      opacity: 0.7;
-      transform: scale(1.05);
-      filter: drop-shadow(0 0 8px var(--primary));
+      opacity: 0.8;
+      transform: scale(1.03);
+      filter: drop-shadow(0 0 10px rgba(var(--primary-rgb), 0.75));
     }
   }
 
@@ -62,60 +61,66 @@
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Light Theme Colors (Default) - Luxury Platinum & Muted Gold */
+  /* Light Theme Colors - Crisp Precision Slate & High-Tech Electric Blue */
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f1f5f9;
-  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.85);
 
   --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-secondary: #334155;
   --text-muted: #64748b;
 
-  --primary: #c29f68;
-  /* Luxury Muted Gold */
-  --primary-hover: #a37b4c;
-  --primary-rgb: 194, 159, 104;
+  --primary: #0284c7;
+  /* Precision Tech Blue / Sky 600 */
+  --primary-hover: #0369a1;
+  /* Sky 700 */
+  --primary-rgb: 2, 132, 199;
 
-  --border-color: #cbd5e1;
-  --border-focus: #c29f68;
+  --border-color: #e2e8f0;
+  /* Slate 200 */
+  --border-focus: #0284c7;
 
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
 
   --glass-blur: 16px;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(203, 213, 225, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(226, 232, 240, 0.8);
 }
 
 [data-theme="dark"] {
-  /* Dark Theme Colors - Luxury Obsidian, Graphite & Champagne Gold */
-  --bg-primary: #090a0f;
-  /* Obsidian Black */
-  --bg-secondary: #12131a;
-  /* Graphite Black */
-  --bg-tertiary: #191b24;
-  /* Rich Slate */
-  --bg-card: rgba(18, 19, 26, 0.65);
+  /* Dark Theme Colors - Deep Space Obsidian Slate & Electric Cyan */
+  --bg-primary: #0a0f1d;
+  /* Deep Space Robotics Slate */
+  --bg-secondary: #111827;
+  /* Carbon Slate 900 */
+  --bg-tertiary: #172237;
+  /* Tech Slate 800 */
+  --bg-card: rgba(17, 24, 39, 0.75);
 
   --text-primary: #f8fafc;
+  /* Crisp Slate 50 */
   --text-secondary: #cbd5e1;
-  --text-muted: #8e9bb0;
+  /* Slate 300 */
+  --text-muted: #8193af;
+  /* Slate Muted */
 
-  --primary: #d4af37;
-  /* Brilliant Champagne Gold */
-  --primary-hover: #f3d078;
-  --primary-rgb: 212, 175, 55;
+  --primary: #38bdf8;
+  /* Electric Cyan / Sky 400 */
+  --primary-hover: #7dd3fc;
+  /* Sky 300 */
+  --primary-rgb: 56, 189, 248;
 
-  --border-color: #262933;
-  /* Slate/Obsidian Border */
-  --border-focus: #d4af37;
+  --border-color: #1e293b;
+  /* Slate 800 */
+  --border-focus: #38bdf8;
 
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.45), 0 10px 10px -5px rgba(0, 0, 0, 0.25);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
 
-  --glass-bg: rgba(18, 19, 26, 0.65);
-  --glass-border: rgba(38, 41, 51, 0.6);
+  --glass-bg: rgba(17, 24, 39, 0.75);
+  --glass-border: rgba(30, 41, 59, 0.8);
 }
 
 
@@ -132,6 +137,40 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at 50% 0%, rgba(var(--primary-rgb), 0.14) 0%, rgba(var(--primary-rgb), 0.03) 45%, transparent 70%);
+  background-attachment: fixed;
+}
+
+/* Radiant Tech Matrix & Ambient Floating Animations */
+.bg-tech-grid {
+  background-image: radial-gradient(rgba(var(--primary-rgb), 0.38) 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, 18px) scale(1.05);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-20px, -22px) scale(0.95);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 14s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 18s ease-in-out infinite;
 }
 
 

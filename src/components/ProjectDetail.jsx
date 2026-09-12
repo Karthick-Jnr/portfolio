@@ -31,9 +31,22 @@ const IconMapper = ({ name, size = 18 }) => {
   return icons[name] || <Settings size={size} />;
 };
 
+const getPlaceholderImage = (index, label) => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+    <rect width="800" height="450" fill="#0f172a"/>
+    <rect x="20" y="20" width="760" height="410" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <circle cx="400" cy="180" r="45" fill="#334155"/>
+    <path d="M385 180 L395 190 L415 170" stroke="#38bdf8" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="400" y="260" dominant-baseline="middle" text-anchor="middle" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="20" font-weight="bold">Project Image ${index + 1}</text>
+    <text x="400" y="295" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace, monospace" font-size="14">Drop ${index + 1}.png into public/project_pictures/${label || 'project'}/</text>
+  </svg>`.replace(/\n\s*/g, ' ');
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+};
+
 export const ProjectDetail = ({ project, details, onBack }) => {
   if (!project || !details) return null;
 
+  const projectAlias = project.detailsLink ? project.detailsLink.split('/').pop().replace('.html', '') : '';
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -165,8 +178,18 @@ export const ProjectDetail = ({ project, details, onBack }) => {
           >
             {details.images.map((imgUrl, idx) => (
               <div key={idx} className="min-w-full h-full relative cursor-pointer overflow-hidden flex items-center justify-center" onClick={() => openLightbox(idx)}>
-                <img src={resolveAssetPath(imgUrl)} className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-45 scale-11" alt="" />
-                <img src={resolveAssetPath(imgUrl)} className="relative max-h-full max-w-full object-contain z-10 transition-transform duration-500 hover:scale-[1.01]" alt={`Slide ${idx + 1}`} />
+                <img 
+                  src={resolveAssetPath(imgUrl)} 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = getPlaceholderImage(idx, projectAlias); }}
+                  className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-45 scale-11" 
+                  alt="" 
+                />
+                <img 
+                  src={resolveAssetPath(imgUrl)} 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = getPlaceholderImage(idx, projectAlias); }}
+                  className="relative max-h-full max-w-full object-contain z-10 transition-transform duration-500 hover:scale-[1.01]" 
+                  alt={`Slide ${idx + 1}`} 
+                />
               </div>
             ))}
           </div>
@@ -282,6 +305,7 @@ export const ProjectDetail = ({ project, details, onBack }) => {
           <div className="max-w-[90vw] max-h-[85vh] flex items-center justify-center">
             <img 
               src={allMedia[lightboxIndex]} 
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = getPlaceholderImage(lightboxIndex, projectAlias); }}
               className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" 
               alt="Enlarged Project Media" 
             />

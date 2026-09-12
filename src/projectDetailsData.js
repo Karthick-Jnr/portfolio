@@ -1,51 +1,113 @@
 export const projectDetailsData = {
-  "middleman": {
-    subtitle: "An automated Request for Quote (RFQ) sourcing engine connecting mail streams to React Flow visual timelines and a serverless PocketBase backend.",
-    images: Array.from({ length: 16 }, (_, i) => `./project_pictures/middleman/${i + 1}.png`),
+  "project1": {
+    subtitle: "A template project for autonomous mobile robotics, embedded firmware architecture, and sensor-driven navigation.",
+    images: Array.from({ length: 4 }, (_, i) => `./project_pictures/project1/${i + 1}.png`),
     metrics: [
-      { value: "Serverless", label: "PocketBase VM Hooks" },
-      { value: "React Flow", label: "Interactive Timeline Map" },
-      { value: "Mail Sync", label: "Google & MS Webhooks" },
-      { value: "<50MB RAM", label: "PocketBase Footprint" }
+      { value: "STM32", label: "Core MCU" },
+      { value: "PID", label: "Motor Control" },
+      { value: "100Hz", label: "Sensor Loop" },
+      { value: "Autonomous", label: "Navigation Mode" }
     ],
     techSpecs: [
-      { label: "Core Stack", value: "React (TypeScript) / Vite" },
-      { label: "Visual Graph", value: "React Flow (xyflow)" },
-      { label: "State & Queries", value: "Tanstack React Query" },
-      { label: "Database Engine", value: "PocketBase (SQLite)" },
-      { label: "Local Webhook Tunnel", value: "ngrok integration" },
-      { label: "Outbox Outbound Mail", value: "SMTP Transport Hook" }
+      { label: "Microcontroller", value: "STM32F4 / ARM Cortex-M4" },
+      { label: "Language", value: "Embedded C / C++" },
+      { label: "Middleware", value: "FreeRTOS / Micro-ROS" },
+      { label: "Sensors", value: "IMU, Ultrasonic & LiDAR" },
+      { label: "Actuation", value: "DC Geared Motors + Encoders" },
+      { label: "Power System", value: "3S LiPo + Buck Regulators" }
     ],
-    architectureTitle: "RFQ Sourcing Pipeline",
+    architectureTitle: "Embedded System & Control Flow",
     architectureNodes: [
-      { title: "Sourcing Hub", desc: "React Flow RFQ center node", icon: "monitor" },
-      { title: "Supplier Webhooks", desc: "Gmail / Outlook webhooks ingestion", icon: "shield-check" },
-      { title: "PocketBase Hooks", desc: "Serverless JS database event logic", icon: "cpu" },
-      { title: "Template Dispatcher", desc: "Bulk personalized email templates", icon: "server" },
-      { title: "Smart Attachments", desc: "Cascade delete & archive guards", icon: "download" }
+      { title: "1. Sensor Array", desc: "IMU & distance telemetry sampling", icon: "upload-cloud" },
+      { title: "2. RTOS Tasks", desc: "Preemptive sensor fusion scheduling", icon: "cpu" },
+      { title: "3. Kinematics Solver", desc: "Differential drive velocity calculations", icon: "shuffle" },
+      { title: "4. Motor Drivers", desc: "PWM H-Bridge actuation control", icon: "hard-drive" },
+      { title: "5. Telemetry & UI", desc: "Wireless status monitoring dashboard", icon: "monitor" }
     ],
     narratives: [
       {
-        heading: "The Sourcing & RFQ Bottleneck",
+        heading: "Project Overview & Engineering Goals",
         paragraphs: [
-          "In manufacturing, supply chain, and procurement, sourcing parts and materials is heavily dependent on email. Sourcing agents send specifications to dozens of vendors, but tracking who replied, who sent drawing revisions, and who is pending NDA quickly becomes a logistical nightmare.",
-          "Middleman solves this email overwhelm by building an automated, visually interactive Sourcing Hub. By linking raw email streams to structured database records, sourcing teams can visualize and search all correspondence in one central cockpit."
+          "This is a template showcase for Project 1. Replace this narrative with the background of your autonomous robotics or embedded design project.",
+          "Describe the key challenges faced during mechanical design, firmware development, sensor integration, and real-time control optimization."
         ]
       },
       {
-        heading: "PocketBase Serverless Architecture",
+        heading: "Embedded Firmware & Real-Time Control",
         paragraphs: [
-          "To eliminate high hosting and maintenance costs of heavy backend servers, Middleman leverages a single-binary PocketBase instance running SQLite. PocketBase operates database routing, admin rules, and security collections within less than 50MB of memory.",
-          "All system business logic is written using serverless JavaScript event hooks (pb_hooks) triggered on database writes. Google and Microsoft webhook listeners process incoming supplier messages and automatically tie replies to active RFQ projects."
+          "Explain the low-level architecture used in the project, such as microcontroller timers, interrupts, and communication protocols (I2C, SPI, UART, CAN):"
+        ],
+        bullets: [
+          "Sensor Fusion: Combining IMU orientation data with wheel encoder feedback for accurate dead-reckoning odometry.",
+          "PID Velocity Control: Tuning proportional-integral-derivative loops to ensure smooth trajectory execution under variable payloads.",
+          "Fail-Safe Protocols: Automated emergency shutdown routines triggered upon obstacle detection or signal loss."
+        ],
+        paragraphsAfter: [
+          "Detail how hardware and software work in harmony to guarantee predictable, fail-safe operation."
         ]
       },
       {
-        heading: "Data Integrity & Cascade Safeguards",
+        heading: "Results & Testing Milestones",
         paragraphs: [
-          "When dealing with heavy procurement contracts, data safety is critical. Middleman implements visual deletion guards where destroying an RFQ project requires typing a strict verification phrase, initiating a cascade purge of logs.",
-          "Additionally, structural profile guards block users from accidentally deleting active clients or vendors currently assigned to open projects, preserving complete research history and attachment trails."
+          "Summarize benchmark results, runtime battery performance, positional accuracy, or physical testing milestones achieved during fabrication and field testing."
         ]
       }
     ]
   },
+
+  "project2": {
+    subtitle: "A template project for multi-axis robotic arm design, inverse kinematics modeling, and automated pick-and-place manipulation.",
+    images: Array.from({ length: 4 }, (_, i) => `./project_pictures/project2/${i + 1}.png`),
+    metrics: [
+      { value: "4-DOF", label: "Articulated Axis" },
+      { value: "±0.5mm", label: "Position Repeatability" },
+      { value: "Inverse", label: "Kinematics Engine" },
+      { value: "Custom", label: "End-Effector Gripper" }
+    ],
+    techSpecs: [
+      { label: "Hardware Platform", value: "Custom Aluminum & 3D Printed Chassis" },
+      { label: "Controller", value: "Arduino Mega / ESP32" },
+      { label: "Kinematics", value: "Analytical Inverse Kinematics (Python)" },
+      { label: "CAD Suite", value: "SolidWorks / Fusion 360" },
+      { label: "Actuators", value: "High-Torque Metal Gear Servos" },
+      { label: "Interface", value: "Serial GUI / Robotic Control Panel" }
+    ],
+    architectureTitle: "Manipulator Kinematics & Control Flow",
+    architectureNodes: [
+      { title: "1. Motion Planner", desc: "Waypoint trajectory planning in Python", icon: "monitor" },
+      { title: "2. Kinematics Engine", desc: "Computes joint angles for target coordinates", icon: "cpu" },
+      { title: "3. Serial Protocol", desc: "Transmits angle packets via UART", icon: "terminal" },
+      { title: "4. Microcontroller", desc: "PWM timer generation for multi-axis servos", icon: "hard-drive" },
+      { title: "5. Gripper Mechanism", desc: "Object grasping and optical limit sensing", icon: "shield" }
+    ],
+    narratives: [
+      {
+        heading: "Robotic Manipulator Conception & Design",
+        paragraphs: [
+          "This is a template showcase for Project 2. Replace this narrative with details about your robotic arm, automated gripper, or mechanical design project.",
+          "Describe the design constraints, payload capacity, reach specifications, and degree-of-freedom selections."
+        ]
+      },
+      {
+        heading: "Kinematics Modeling & Motion Planning",
+        paragraphs: [
+          "Explain the mathematical modeling applied to translate Cartesian coordinates (X, Y, Z) into precise joint motor angles:"
+        ],
+        bullets: [
+          "Denavit-Hartenberg (D-H) Parameters: Establishing link frames to compute forward kinematic transformation matrices.",
+          "Inverse Kinematics Solver: Geometric and algebraic solutions resolving target end-effector coordinates into motor PWM duty cycles.",
+          "Trajectory Interpolation: Generating cubic spline trajectories to avoid abrupt acceleration jerks and mechanical stress."
+        ],
+        paragraphsAfter: [
+          "Describe how physical hardware tolerances were accounted for during software calibration."
+        ]
+      },
+      {
+        heading: "Fabrication & Real-World Validation",
+        paragraphs: [
+          "Outline the manufacturing methods (3D printing, CNC machining, laser cutting), assembly workflow, and automated pick-and-place cycle test results."
+        ]
+      }
+    ]
+  }
 };

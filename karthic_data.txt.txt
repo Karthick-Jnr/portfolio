@@ -1,0 +1,17 @@
+name : Karthick
+role : Robotics & Automation Engineer
+email : karthick.robotics@gmail.com
+github : https://github.com/Karthick-Jnr
+linkedin : https://www.linkedin.com/in/karthick-link
+phone : +91 98765 43210
+education : Final Year B.E. Robotics & Automation, Madras Institute of Technology
+about me : Final-year B.E. Robotics and Automation Engineering student with a deep focus on embedded programming, robot design, and industrial automation systems. Specializing in integrating physical robotic mechanisms with robust embedded firmware.
+
+
+localhost : pnpm run dev
+github push flow
+ cd  C:\Users\STARK\Documents\portfolio\port
+ pnpm run build
+ git add .
+ git commit -m "commit build"
+ git push -u origin main
