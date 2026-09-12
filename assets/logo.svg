@@ -17,10 +17,11 @@
     <!-- Gold Border Ring -->
     <rect x="6" y="6" width="108" height="108" rx="26" fill="none" stroke="url(#gradGold)" stroke-width="2.5" opacity="0.8"/>
     
-    <!-- Lowercase "i" (Dot & Stem) -->
-    <!-- The Dot -->
-    <circle cx="60" cy="38" r="8" fill="url(#gradGold)"/>
-    
-    <!-- The Stem (Line below the dot) -->
-    <rect x="53" y="54" width="14" height="34" rx="7" fill="url(#gradGold)"/>
+    <!-- Capital "K" Glyph -->
+    <path d="M 33.85 89.0 L 33.85 31.0 L 45.56 31.0 L 45.56 56.75 L 69.22 31.0 L 84.97 31.0 L 63.13 53.59 L 86.15 89.0 L 71.01 89.0 L 55.06 61.78 L 45.56 71.48 L 45.56 89.0 Z" 
+          fill="url(#gradGold)" 
+          stroke="url(#gradGold)" 
+          stroke-width="1.5" 
+          stroke-linejoin="round" 
+          stroke-linecap="round"/>
 </svg>
