@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Award } from 'lucide-react';
 
 export const Certificates = ({ certificates }) => {
-  if (!certificates || certificates.length === 0) return null;
-
   const [activeIndex, setActiveIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -14,6 +12,8 @@ export const Certificates = ({ certificates }) => {
   };
 
   useEffect(() => {
+    if (!certificates || certificates.length === 0) return;
+
     resetTimeout();
     timeoutRef.current = setTimeout(
       () =>
@@ -26,7 +26,9 @@ export const Certificates = ({ certificates }) => {
     return () => {
       resetTimeout();
     };
-  }, [activeIndex, certificates.length]);
+  }, [activeIndex, certificates]);
+
+  if (!certificates || certificates.length === 0) return null;
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? certificates.length - 1 : prev - 1));

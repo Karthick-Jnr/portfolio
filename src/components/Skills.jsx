@@ -1,23 +1,22 @@
-import React from 'react';
 import { Cpu, Server, Layers, Settings } from 'lucide-react';
 
 export const Skills = ({ skills }) => {
   // Categorize skills based on names
   const categories = [
     {
-      title: "Systems & DevOps",
+      title: "Robotics & Autonomous Systems",
       icon: <Server size={20} />,
-      items: ["Docker", "Docker Swarm", "NGINX", "Pocketbase", "Prometheus", "Grafana", "JupyterHub", "GlusterFS", "Git", "XAMPP", "FireBase"]
+      items: ["ROS 2", "Autonomous Mobile Robots", "Navigation2", "SLAM", "LiDAR", "Path Planning", "Trajectory Tracking", "Gazebo", "RViz", "ROS 2 Control", "Industrial Automation", "Robotic Manipulation"]
     },
     {
-      title: "Software & Protocols",
+      title: "Embedded Systems & Control",
       icon: <Cpu size={20} />,
-      items: ["Python", "FastAPI", "React", "Flutter", "Arduino", "MQTT"]
+      items: ["Python", "C", "C++", "Arduino", "ESP32", "Sensors", "Actuators", "Servo Motors", "PWM", "Embedded Systems", "Motor Control", "Sensor Fusion", "IoT"]
     },
     {
-      title: "CAD/CAE Engineering",
+      title: "Computer Vision & Engineering Design",
       icon: <Layers size={20} />,
-      items: ["SolidWorks", "Creo", "NX CAD", "CATIA", "Abaqus CAE"]
+      items: ["OpenCV", "YOLO", "Computer Vision", "SolidWorks", "Creo", "Fusion 360", "RoboDK", "Proteus", "Tinkercad", "Wokwi", "Assembly Design", "Kinematics"]
     }
   ];
 

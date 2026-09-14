@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowUpRight, Calendar, Star } from 'lucide-react';
 
 export const Projects = ({ projects, onSelectProject }) => {

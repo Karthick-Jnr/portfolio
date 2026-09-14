@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, Fragment } from 'react';
 import { resolveAssetPath } from '../utils';
 import { 
   ArrowLeft, ExternalLink, Calendar, GitBranch, Layers, Award,
@@ -44,22 +44,27 @@ const getPlaceholderImage = (index, label) => {
 };
 
 export const ProjectDetail = ({ project, details, onBack }) => {
-  if (!project || !details) return null;
-
-  const projectAlias = project.detailsLink ? project.detailsLink.split('/').pop().replace('.html', '') : '';
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Combine project images and certificate into a single list for lightbox navigation
-  const allMedia = (details.images || []).map(resolveAssetPath);
-  if (details.certificate) {
+  const allMedia = (details?.images || []).map(resolveAssetPath);
+  if (details?.certificate) {
     allMedia.push(resolveAssetPath(details.certificate));
   }
 
+  const handleLightboxNext = useCallback(() => {
+    setLightboxIndex((prev) => (prev === allMedia.length - 1 ? 0 : prev + 1));
+  }, [allMedia.length]);
+
+  const handleLightboxPrev = useCallback(() => {
+    setLightboxIndex((prev) => (prev === 0 ? allMedia.length - 1 : prev - 1));
+  }, [allMedia.length]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [project.title]);
+  }, [project?.title]);
 
   // Handle lightbox keyboard navigation
   useEffect(() => {
@@ -71,7 +76,11 @@ export const ProjectDetail = ({ project, details, onBack }) => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, lightboxIndex]);
+  }, [lightboxOpen, handleLightboxNext, handleLightboxPrev]);
+
+  if (!project || !details) return null;
+
+  const projectAlias = project.detailsLink ? project.detailsLink.split('/').pop().replace('.html', '') : '';
 
   const handleCarouselNext = () => {
     setCarouselIndex((prev) => (prev === details.images.length - 1 ? 0 : prev + 1));
@@ -84,14 +93,6 @@ export const ProjectDetail = ({ project, details, onBack }) => {
   const openLightbox = (index) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
-  };
-
-  const handleLightboxNext = () => {
-    setLightboxIndex((prev) => (prev === allMedia.length - 1 ? 0 : prev + 1));
-  };
-
-  const handleLightboxPrev = () => {
-    setLightboxIndex((prev) => (prev === 0 ? allMedia.length - 1 : prev - 1));
   };
 
   return (
@@ -243,7 +244,7 @@ export const ProjectDetail = ({ project, details, onBack }) => {
 
               <div className="flex flex-col gap-4">
                 {details.architectureNodes.map((node, idx) => (
-                  <React.Fragment key={idx}>
+                  <Fragment key={idx}>
                     <div className="bg-bg-tertiary border border-border-color rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:scale-[1.02]">
                       <span className="bg-bg-secondary border border-border-color w-10 h-10 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
                         <IconMapper name={node.icon} />
@@ -258,7 +259,7 @@ export const ProjectDetail = ({ project, details, onBack }) => {
                         <ChevronRight size={16} className="rotate-90" />
                       </div>
                     )}
-                  </React.Fragment>
+                  </Fragment>
                 ))}
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 
 const GithubIcon = ({ size = 20 }) => (
@@ -53,7 +53,7 @@ export const Hero = ({ role, name, about, resumeUrl, githubUrl, linkedinUrl, ins
     if (!trimmed) return;
 
     const cmd = trimmed.toLowerCase();
-    let response = '';
+    let response;
     const newHistory = [...terminalHistory, { type: 'input', text: trimmed }];
 
     switch (cmd) {
@@ -73,13 +73,14 @@ export const Hero = ({ role, name, about, resumeUrl, githubUrl, linkedinUrl, ins
           `[${edu.period}] ${edu.degree}\n  ↳ ${edu.institution} (${edu.description || ''})`
         ).join('\n\n');
         break;
-      case 'projects':
+      case 'projects': {
         const sortedProj = [...data.projects].sort((a, b) => (b.stars || 0) - (a.stars || 0));
         response = sortedProj.map(p => {
           const rating = p.stars ? ` [Rating: ${p.stars}/5]` : '';
           return `★ ${p.title} (${p.status || 'Completed'})${rating}\n  - Tags: ${p.tags.join(', ')}\n  - ${p.description}`;
         }).join('\n\n');
         break;
+      }
       case 'skills':
         response = `Technical Stack:\n  • ` + data.skills.join('\n  • ');
         break;
