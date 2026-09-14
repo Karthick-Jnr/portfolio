@@ -13,7 +13,7 @@ const InstagramIcon = ({ size = 18 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
 );
 
-export const Navbar = ({ theme, toggleTheme, toggleTerminal, currentView, resumeUrl, githubUrl, linkedinUrl, instagramUrl }) => {
+export const Navbar = ({ theme, toggleTheme, toggleTerminal, currentView, githubUrl, linkedinUrl, instagramUrl, onOpenResume }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -75,9 +75,13 @@ export const Navbar = ({ theme, toggleTheme, toggleTerminal, currentView, resume
           </div>
 
           <div className="flex items-center gap-3">
-            <a href={resumeUrl} download className="hidden sm:inline-flex items-center justify-center px-5 py-2 border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary rounded-full text-sm font-semibold transition-all duration-200 shadow-sm">
+            <button
+              type="button"
+              onClick={onOpenResume}
+              className="hidden sm:inline-flex items-center justify-center px-5 py-2 border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary rounded-full text-sm font-semibold transition-all duration-200 shadow-sm cursor-pointer"
+            >
               Resume
-            </a>
+            </button>
 
             <button onClick={toggleTerminal} className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary transition-all duration-200 cursor-pointer shadow-sm" title="Open Terminal">
               <Terminal size={18} />
@@ -117,9 +121,16 @@ export const Navbar = ({ theme, toggleTheme, toggleTerminal, currentView, resume
               {link.label}
             </a>
           ))}
-          <a href={resumeUrl} download className="text-lg font-bold text-primary hover:underline">
-            Download Resume
-          </a>
+          <button
+            type="button"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenResume();
+            }}
+            className="text-lg font-bold text-primary hover:underline text-left cursor-pointer bg-transparent border-none p-0"
+          >
+            View Resume
+          </button>
         </div>
 
         <div className="h-[1px] bg-border-color w-full" />

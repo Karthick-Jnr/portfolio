@@ -11,6 +11,7 @@ import { Timeline } from './components/Timeline';
 import { Skills } from './components/Skills';
 import { Certificates } from './components/Certificates';
 import { Terminal } from './components/Terminal';
+import { ResumeModal } from './components/ResumeModal';
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2, Send } from 'lucide-react';
 
 const GithubIcon = ({ size = 20 }) => (
@@ -28,6 +29,7 @@ const InstagramIcon = ({ size = 20 }) => (
 export default function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const [terminalOpen, setTerminalOpen] = useState(false);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
   const [formStatus, setFormStatus] = useState({ state: 'idle', message: '' });
   const [lastMessage, setLastMessage] = useState({ name: '', email: '', message: '' });
   const navigate = useNavigate();
@@ -107,10 +109,10 @@ export default function App() {
         toggleTerminal={() => setTerminalOpen(!terminalOpen)}
         currentView={currentView}
         setView={handleNavbarSetView}
-        resumeUrl={data.resume}
         githubUrl={data.contact.github}
         linkedinUrl={data.contact.linkedin}
         instagramUrl={data.contact.instagram}
+        onOpenResume={() => setResumeModalOpen(true)}
       />
 
       <main className="min-h-[calc(100vh-4.5rem-12rem)]">
@@ -122,11 +124,11 @@ export default function App() {
                   role={data.role}
                   name={data.name}
                   about={data.about}
-                  resumeUrl={data.resume}
                   githubUrl={data.contact.github}
                   linkedinUrl={data.contact.linkedin}
                   instagramUrl={data.contact.instagram}
                   data={data}
+                  onOpenResume={() => setResumeModalOpen(true)}
                 />
               </section>
 
@@ -322,6 +324,12 @@ export default function App() {
       <Terminal
         isOpen={terminalOpen}
         onClose={() => setTerminalOpen(false)}
+        data={data}
+      />
+
+      <ResumeModal
+        isOpen={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
         data={data}
       />
     </>

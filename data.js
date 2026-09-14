@@ -2,6 +2,7 @@ export const data = {
   name: "Karthick T",
   role: "Robotics & Automation Engineer",
   resume: "./assets/resume.pdf",
+  resume_image: "./assets/ressume.jpg",
   images: {
     profile: "./assets/hello.png",
   },
