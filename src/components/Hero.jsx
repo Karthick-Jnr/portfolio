@@ -145,7 +145,7 @@ export const Hero = ({ role, name, about, githubUrl, linkedinUrl, instagramUrl, 
           <button
             type="button"
             onClick={onOpenResume}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm cursor-pointer transition-all duration-200 border border-border-color bg-transparent text-text-primary hover:bg-bg-tertiary hover:border-text-secondary hover:-translate-y-1"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm cursor-pointer transition-all duration-200 border border-border-color bg-transparent text-text-primary hover:bg-primary/15 hover:text-primary hover:border-primary/40 hover:-translate-y-1"
           >
             View Resume <Eye size={16} />
           </button>
@@ -158,7 +158,7 @@ export const Hero = ({ role, name, about, githubUrl, linkedinUrl, instagramUrl, 
               target="_blank"
               rel="noreferrer"
               title="GitHub Profile"
-              className="flex items-center justify-center w-11 h-11 rounded-full border border-border-color bg-bg-secondary text-text-secondary hover:text-primary hover:border-primary hover:-translate-y-1 transition-all duration-200 shadow-sm"
+              className="flex items-center justify-center w-11 h-11 rounded-full border border-border-color bg-bg-secondary text-text-secondary hover:text-primary hover:bg-primary/15 hover:border-primary/40 hover:-translate-y-1 transition-all duration-200 shadow-sm"
             >
               <GithubIcon size={20} />
             </a>
@@ -169,7 +169,7 @@ export const Hero = ({ role, name, about, githubUrl, linkedinUrl, instagramUrl, 
               target="_blank"
               rel="noreferrer"
               title="LinkedIn Profile"
-              className="flex items-center justify-center w-11 h-11 rounded-full border border-border-color bg-bg-secondary text-text-secondary hover:text-primary hover:border-primary hover:-translate-y-1 transition-all duration-200 shadow-sm"
+              className="flex items-center justify-center w-11 h-11 rounded-full border border-border-color bg-bg-secondary text-text-secondary hover:text-primary hover:bg-primary/15 hover:border-primary/40 hover:-translate-y-1 transition-all duration-200 shadow-sm"
             >
               <LinkedinIcon size={20} />
             </a>
@@ -180,7 +180,7 @@ export const Hero = ({ role, name, about, githubUrl, linkedinUrl, instagramUrl, 
               target="_blank"
               rel="noreferrer"
               title="Instagram Profile"
-              className="flex items-center justify-center w-11 h-11 rounded-full border border-border-color bg-bg-secondary text-text-secondary hover:text-primary hover:border-primary hover:-translate-y-1 transition-all duration-200 shadow-sm"
+              className="flex items-center justify-center w-11 h-11 rounded-full border border-border-color bg-bg-secondary text-text-secondary hover:text-primary hover:bg-primary/15 hover:border-primary/40 hover:-translate-y-1 transition-all duration-200 shadow-sm"
             >
               <InstagramIcon size={20} />
             </a>

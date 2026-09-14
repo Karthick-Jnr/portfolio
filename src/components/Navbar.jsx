@@ -78,20 +78,20 @@ export const Navbar = ({ theme, toggleTheme, toggleTerminal, currentView, github
             <button
               type="button"
               onClick={onOpenResume}
-              className="hidden sm:inline-flex items-center justify-center px-5 py-2 border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary rounded-full text-sm font-semibold transition-all duration-200 shadow-sm cursor-pointer"
+              className="hidden sm:inline-flex items-center justify-center px-5 py-2 border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:bg-primary/15 hover:border-primary/40 rounded-full text-sm font-semibold transition-all duration-200 shadow-sm cursor-pointer"
             >
               Resume
             </button>
 
-            <button onClick={toggleTerminal} className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary transition-all duration-200 cursor-pointer shadow-sm" title="Open Terminal">
+            <button onClick={toggleTerminal} className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-200 cursor-pointer shadow-sm" title="Open Terminal">
               <Terminal size={18} />
             </button>
 
-            <button onClick={toggleTheme} className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary transition-all duration-200 cursor-pointer shadow-sm" title="Toggle Theme">
+            <button onClick={toggleTheme} className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-200 cursor-pointer shadow-sm" title="Toggle Theme">
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <button onClick={() => setMobileMenuOpen(true)} className="flex lg:hidden items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary transition-all duration-200 cursor-pointer shadow-sm">
+            <button onClick={() => setMobileMenuOpen(true)} className="flex lg:hidden items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-200 cursor-pointer shadow-sm">
               <Menu size={18} />
             </button>
           </div>
@@ -137,17 +137,17 @@ export const Navbar = ({ theme, toggleTheme, toggleTerminal, currentView, github
 
         <div className="flex gap-4 justify-center">
           {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary transition-all duration-200">
+            <a href={githubUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-200">
               <GithubIcon size={18} />
             </a>
           )}
           {linkedinUrl && (
-            <a href={linkedinUrl} target="_blank" rel="noreferrer" title="LinkedIn" className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary transition-all duration-200">
+            <a href={linkedinUrl} target="_blank" rel="noreferrer" title="LinkedIn" className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-200">
               <LinkedinIcon size={18} />
             </a>
           )}
           {instagramUrl && (
-            <a href={instagramUrl.startsWith('http') ? instagramUrl : `https://instagram.com/${instagramUrl.replace('@', '')}`} target="_blank" rel="noreferrer" title="Instagram" className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:border-primary transition-all duration-200">
+            <a href={instagramUrl.startsWith('http') ? instagramUrl : `https://instagram.com/${instagramUrl.replace('@', '')}`} target="_blank" rel="noreferrer" title="Instagram" className="flex items-center justify-center w-10 h-10 rounded-full border border-border-color bg-bg-secondary text-text-primary hover:text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-200">
               <InstagramIcon size={18} />
             </a>
           )}

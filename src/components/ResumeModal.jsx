@@ -29,7 +29,7 @@ export const ResumeModal = ({ isOpen, onClose, data }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[200] bg-black/80 flex items-center justify-center p-3 sm:p-6 select-none"
+      className="fixed inset-0 z-[200] bg-black/80 flex items-center justify-center p-3 sm:p-6"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -37,9 +37,9 @@ export const ResumeModal = ({ isOpen, onClose, data }) => {
       aria-modal="true"
       aria-labelledby="resume-modal-title"
     >
-      <div className="w-full max-w-4xl max-h-[92vh] bg-bg-secondary border border-border-color rounded-2xl flex flex-col shadow-2xl overflow-hidden text-left">
+      <div className="w-full max-w-4xl h-[90vh] max-h-[92vh] bg-bg-secondary border border-border-color rounded-2xl flex flex-col shadow-2xl overflow-hidden text-left">
         {/* Modal Header */}
-        <div className="bg-bg-tertiary px-5 py-3.5 flex items-center justify-between border-b border-border-color">
+        <div className="bg-bg-tertiary px-5 py-3.5 flex items-center justify-between border-b border-border-color flex-shrink-0">
           <div className="flex items-center gap-3">
             <span className="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center flex-shrink-0">
               <FileText size={20} />
@@ -66,7 +66,7 @@ export const ResumeModal = ({ isOpen, onClose, data }) => {
 
             <button
               onClick={onClose}
-              className="w-9 h-9 rounded-full flex items-center justify-center bg-bg-secondary border border-border-color text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-full flex items-center justify-center bg-bg-secondary border border-border-color text-text-secondary hover:text-primary hover:bg-primary/15 hover:border-primary/40 transition-all duration-200 cursor-pointer"
               title="Close (Esc)"
               aria-label="Close"
             >
@@ -76,8 +76,8 @@ export const ResumeModal = ({ isOpen, onClose, data }) => {
         </div>
 
         {/* Modal Body - Scrollable Resume View */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-bg-primary/50 flex justify-center">
-          <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden border border-border-color">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-4 sm:p-6 bg-bg-primary/50 flex justify-center">
+          <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg border border-border-color h-fit overflow-hidden">
             <img
               src={resumeImageUrl}
               alt={`${data?.name || 'Professional'} Resume`}
