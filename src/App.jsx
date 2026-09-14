@@ -80,7 +80,7 @@ export default function App() {
       if (res.ok || jsonRes.success === 'true' || jsonRes.success === true) {
         setFormStatus({
           state: 'success',
-          message: 'Thank you! Your message has been sent successfully.'
+          message: 'Submitted'
         });
         form.reset();
       } else {
@@ -212,12 +212,9 @@ export default function App() {
                     <div className="bg-bg-secondary border border-border-color p-10 rounded-3xl shadow-xl">
                       <form onSubmit={handleContactSubmit} className="space-y-5 text-left">
                         {formStatus.state === 'success' && (
-                          <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-start gap-3">
-                            <CheckCircle size={20} className="flex-shrink-0 mt-0.5" />
-                            <div>
-                              <p className="font-semibold">{formStatus.message}</p>
-                              <p className="text-xs text-emerald-400/80 mt-1">If this is your first test submission, please check your inbox (or spam) to confirm your FormSubmit email address once.</p>
-                            </div>
+                          <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-center gap-3">
+                            <CheckCircle size={20} className="flex-shrink-0" />
+                            <p className="font-semibold">{formStatus.message}</p>
                           </div>
                         )}
 
