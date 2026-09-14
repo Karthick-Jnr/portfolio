@@ -43,6 +43,8 @@ export default function App() {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
+
+
   const currentView = location.pathname.startsWith('/projects/') ? 'detail' : 'home';
 
   const handleContactSubmit = async (e) => {
@@ -234,39 +236,39 @@ export default function App() {
 
                         <div className="flex flex-col gap-2">
                           <label htmlFor="name" className="text-sm font-semibold text-text-secondary">Name</label>
-                          <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            className="w-full p-3 rounded-lg border border-border-color bg-bg-secondary text-text-primary outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all" 
-                            placeholder="Your Name" 
-                            required 
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            className="w-full p-3 rounded-lg border border-border-color bg-bg-secondary text-text-primary outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
+                            placeholder="Your Name"
+                            required
                           />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="email" className="text-sm font-semibold text-text-secondary">Email</label>
-                          <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            className="w-full p-3 rounded-lg border border-border-color bg-bg-secondary text-text-primary outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all" 
-                            placeholder="you@example.com" 
-                            required 
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            className="w-full p-3 rounded-lg border border-border-color bg-bg-secondary text-text-primary outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
+                            placeholder="you@example.com"
+                            required
                           />
                         </div>
                         <div className="flex flex-col gap-2">
                           <label htmlFor="message" className="text-sm font-semibold text-text-secondary">Message</label>
-                          <textarea 
-                            id="message" 
-                            name="message" 
-                            className="w-full p-3 rounded-lg border border-border-color bg-bg-secondary text-text-primary outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all" 
-                            rows="4" 
-                            placeholder="Tell me about your project or opportunity..." 
+                          <textarea
+                            id="message"
+                            name="message"
+                            className="w-full p-3 rounded-lg border border-border-color bg-bg-secondary text-text-primary outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
+                            rows="4"
+                            placeholder="Tell me about your project or opportunity..."
                             required
                           ></textarea>
                         </div>
-                        <button 
-                          type="submit" 
+                        <button
+                          type="submit"
                           disabled={formStatus.state === 'loading'}
                           className="w-full mt-2 inline-flex items-center justify-center gap-2 p-3.5 rounded-full font-semibold text-sm cursor-pointer transition-all border-none outline-none bg-primary text-bg-secondary hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                         >
