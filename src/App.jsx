@@ -60,7 +60,8 @@ export default function App() {
     setFormStatus({ state: 'loading', message: '' });
 
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${data.contact.email}`, {
+      const endpoint = data.contact.formsubmit_token || data.contact.email;
+      const res = await fetch(`https://formsubmit.co/ajax/${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

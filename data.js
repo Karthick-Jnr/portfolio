@@ -8,6 +8,7 @@ export const data = {
   },
   contact: {
     email: "karthickjr.mit@gmail.com",
+    formsubmit_token: "7eb58bdaba61fa8d60d8724d888a9787",
     phone: "+91 95978 86774",
     location: "Chennai, Tamil Nadu, India",
     github: "https://github.com/Karthick-Jnr",
